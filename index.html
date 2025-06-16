@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <style>
-    ol, li{
-      list-style-type: none;
-    }
     body {
       background-color: #e0e0e0;
       color: #222;
@@ -40,14 +37,49 @@
     <div class="slides">
 
       <section>
-        <h2>Análisis experimental del péndulo doble
-        y su relación con la formulación lagrangiana</h2>
+        <h2>Análisis experimental del péndulo doble</h2>
+        <p>y su relación con la formulación lagrangiana</p>
         <p><strong>John Mauricio Mesa Echeverri</strong><br><strong>Aleph Sebastián Enciso Cruz</strong><br>Universidad de Antioquia</p>
       </section>
 
       <section>
+        <h3>Resumen</h3>
+        <p>El péndulo doble es un sistema mecánico simple en su construcción, pero altamente complejo en su comportamiento dinámico. En este proyecto se construirá un péndulo doble funcional, se analizará su comportamiento y se contrastará con el modelo lagrangiano, como introducción a conceptos fundamentales de la mecánica clásica y el caos determinista.</p>
+      </section>
+
+      <section>
+        <h3>Introducción (1/2)</h3>
+        <ul>
+          <li>La formulación lagrangiana describe sistemas con restricciones complejas.</li>
+          <li>El péndulo doble: sistema no lineal y caótico, muy sensible a condiciones iniciales.</li>
+          <li>Permite explorar caos determinista de forma visual y concreta.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Introducción (2/2)</h3>
+        <p>Modelo lagrangiano:</p>
+        <p>L = T - V</p>
+        <p>Ecuaciones de Euler-Lagrange:</p>
+        <code>d/dt (∂L/∂ẋᵢ) - ∂L/∂xᵢ = 0</code>
+      </section>
+
+      <section>
+        <h3>Planteamiento del problema</h3>
+        <ul>
+          <li>¿Puede un montaje casero capturar correctamente el comportamiento caótico del péndulo doble?</li>
+          <li>¿Qué limitaciones surgen al comparar teoría y experimento?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Hipótesis</h3>
+        <p>El montaje experimental permitirá registrar patrones caóticos y diferencias debido a condiciones iniciales, aunque no coincidirá exactamente con la teoría debido a la fricción, errores de medición y sensibilidad extrema.</p>
+      </section>
+
+      <section>
         <h3>Objetivo general</h3>
-        <p>Mostrar que el péndulo doble permite observar comportamientos caóticos y evidenciar sensibilidad a condiciones iniciales, introduciendo conceptos de sistemas no lineales.</p>
+        <p>Mostrar que el péndulo doble, aun con un montaje experimental sencillo, permite observar comportamientos caóticos y evidenciar la sensibilidad a las condiciones iniciales.</p>
       </section>
 
       <section>
@@ -63,54 +95,20 @@
       </section>
 
       <section>
-        <h3>Introducción (1/2)</h3>
-        <ul>
-          <li>Mecánica clásica: Newton → Lagrange</li>
-          <li>Coordenadas generalizadas y energías</li>
-          <li>Modelado con restricciones complejas</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Introducción (2/2)</h3>
-        <ul>
-          <li>Péndulo doble: sistema determinista y caótico</li>
-          <li>Sensibilidad a condiciones iniciales</li>
-          <li>Ejemplo ideal de sistemas no lineales</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Modelo teórico</h3>
-        <p>Coordenadas: &theta;<sub>1</sub>, &theta;<sub>2</sub></p>
-        <p>Lagrangiano: L = T - V</p>
-        <p>Ecuaciones de Euler-Lagrange:</p>
-        <code>&#8706;L/&#8706;q<sub>i</sub> - d/dt (&#8706;L/&#8706;&#775;q<sub>i</sub>) = 0</code>
-      </section>
-
-      <section>
-        <h3>Planteamiento del problema</h3>
-        <ul>
-          <li>¿Un montaje casero puede capturar el caos?</li>
-          <li>¿Es comparable con la teoría?</li>
-          <li>¿Qué limitaciones experimentales existen?</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Hipótesis</h3>
-        <p>El montaje permite visualizar caos cualitativamente, aunque con diferencias por fricción y errores.</p>
-      </section>
-
-      <section>
-        <h3>Metodología</h3>
+        <h3>Metodología (1/2)</h3>
         <ol>
-          <li>Construcción del péndulo</li>
-          <li>Grabación del movimiento</li>
-          <li>Análisis con Tracker</li>
-          <li>Modelo lagrangiano</li>
-          <li>Simulación numérica en Python</li>
-          <li>Comparación teoría-experimento</li>
+          <li>Construcción del péndulo doble (materiales ligeros y articulaciones con baja fricción)</li>
+          <li>Grabación del movimiento con cámara fija</li>
+          <li>Extracción de datos angulares con Tracker</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Metodología (2/2)</h3>
+        <ol start="4">
+          <li>Formulación del modelo lagrangiano con energías T y V</li>
+          <li>Resolución numérica con Python (Runge-Kutta)</li>
+          <li>Comparación cualitativa entre simulaciones y datos experimentales</li>
         </ol>
       </section>
 
