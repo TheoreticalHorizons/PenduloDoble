@@ -1,111 +1,95 @@
-\documentclass{beamer}
-\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{amsmath, amssymb}
-\usetheme{Madrid}
-\usecolortheme{default}
-
-\title{Análisis experimental del péndulo doble como sistema caótico}
-\subtitle{y su relación con la formulación lagrangiana}
-\author{John Mauricio Mesa Echeverri \\ Aleph Sebastián Enciso Cruz}
-\institute{Instituto de Física \\ Universidad de Antioquia}
-\date{\today}
-
-\begin{document}
-
-\begin{frame}
-  \titlepage
-\end{frame}
-
-% Objetivo general
-\begin{frame}{Objetivo general}
-Mostrar que el péndulo doble, aun con un montaje experimental sencillo, permite observar comportamientos caóticos y evidenciar la sensibilidad a las condiciones iniciales, introduciendo conceptos de sistemas no lineales y dinámicas complejas.
-\end{frame}
-
-% Objetivos específicos
-\begin{frame}{Objetivos específicos}
-\begin{itemize}
-    \item Construir un péndulo doble funcional.
-    \item Registrar el movimiento angular.
-    \item Analizar los datos con Tracker.
-    \item Formular y simular el modelo lagrangiano.
-    \item Resolver las ecuaciones con Python.
-    \item Comparar resultados teóricos y experimentales.
-\end{itemize}
-\end{frame}
-
-% Introducción 1
-\begin{frame}{Introducción (1/2)}
-\begin{itemize}
-    \item Mecánica clásica: Newton $\rightarrow$ Lagrange.
-    \item Formulación lagrangiana: coordenadas generalizadas y energías.
-    \item Permite modelar sistemas con restricciones complejas.
-\end{itemize}
-\end{frame}
-
-% Introducción 2
-\begin{frame}{Introducción (2/2)}
-\begin{itemize}
-    \item El péndulo doble es un sistema determinista y caótico.
-    \item Muy sensible a las condiciones iniciales.
-    \item Ideal para ilustrar sistemas no lineales y caos determinista.
-\end{itemize}
-\end{frame}
-
-% Modelo teórico
-\begin{frame}{Modelo teórico}
-\begin{itemize}
-    \item Coordenadas generalizadas: $\theta_1$, $\theta_2$.
-    \item Lagrangiano: $L = T - V$
-    \item Ecuaciones de Euler-Lagrange:
-\end{itemize}
-\[
-\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{q}_i} \right) - \frac{\partial L}{\partial q_i} = 0
-\]
-\end{frame}
-
-% Planteamiento del problema
-\begin{frame}{Planteamiento del problema}
-\begin{itemize}
-    \item ¿Puede un montaje casero capturar el comportamiento caótico?
-    \item ¿Se puede comparar con el modelo teórico?
-    \item ¿Qué limitaciones experimentales existen?
-\end{itemize}
-\end{frame}
-
-% Hipótesis
-\begin{frame}{Hipótesis}
-El montaje permitirá visualizar patrones caóticos, pero la coincidencia con el modelo será cualitativa, debido a fricción, errores de medición y sensibilidad extrema.
-\end{frame}
-
-% Metodología (1/2)
-\begin{frame}{Metodología (1/2)}
-\begin{enumerate}
-    \item Construcción del montaje experimental.
-    \item Grabación del movimiento con cámara.
-    \item Análisis de video con Tracker.
-\end{enumerate}
-\end{frame}
-
-% Metodología (2/2)
-\begin{frame}{Metodología (2/2)}
-\begin{enumerate}
-    \setcounter{enumi}{3}
-    \item Formulación del modelo lagrangiano.
-    \item Resolución numérica en Python (Runge-Kutta).
-    \item Comparación cualitativa teoría–experimento.
-\end{enumerate}
-\end{frame}
-
-% Bibliografía
-\begin{frame}{Bibliografía}
-\footnotesize
-\begin{itemize}
-    \item Goldstein, H., Poole, C., \& Safko, J. (2002). \textit{Classical Mechanics}.
-    \item Strogatz, S. (2015). \textit{Nonlinear Dynamics and Chaos}.
-    \item Landau, L. D., \& Lifshitz, E. M. (1976). \textit{Mechanics}.
-    \item Denny, M. (2002). \textit{Am. J. Phys.} – Chaos with Tracker.
-\end{itemize}
-\end{frame}
-
-\end{document}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Péndulo Doble - Presentación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>Análisis experimental del péndulo doble</h2>
+        <p>y su relación con la formulación lagrangiana</p>
+        <p><strong>John Mauricio Mesa Echeverri</strong><br><strong>Aleph Sebastián Enciso Cruz</strong><br>Universidad de Antioquia</p>
+      </section>
+      <section>
+        <h3>Objetivo general</h3>
+        <p>Mostrar que el péndulo doble permite observar comportamientos caóticos y evidenciar sensibilidad a condiciones iniciales, introduciendo conceptos de sistemas no lineales.</p>
+      </section>
+      <section>
+        <h3>Objetivos específicos</h3>
+        <ul>
+          <li>Construir un péndulo doble funcional</li>
+          <li>Registrar el movimiento angular</li>
+          <li>Analizar los datos con Tracker</li>
+          <li>Formular y simular el modelo lagrangiano</li>
+          <li>Resolver las ecuaciones con Python</li>
+          <li>Comparar resultados teóricos y experimentales</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Introducción (1/2)</h3>
+        <ul>
+          <li>Mecánica clásica: Newton → Lagrange</li>
+          <li>Coordenadas generalizadas y energías</li>
+          <li>Modelado con restricciones complejas</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Introducción (2/2)</h3>
+        <ul>
+          <li>Péndulo doble: sistema determinista y caótico</li>
+          <li>Sensibilidad a condiciones iniciales</li>
+          <li>Ejemplo ideal de sistemas no lineales</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Modelo teórico</h3>
+        <p>Coordenadas: &theta;<sub>1</sub>, &theta;<sub>2</sub></p>
+        <p>Lagrangiano: L = T - V</p>
+        <p>Ecuaciones de Euler-Lagrange:</p>
+        <code>&#8706;L/&#8706;q<sub>i</sub> - d/dt (&#8706;L/&#8706;&#775;q<sub>i</sub>) = 0</code>
+      </section>
+      <section>
+        <h3>Planteamiento del problema</h3>
+        <ul>
+          <li>¿Un montaje casero puede capturar el caos?</li>
+          <li>¿Es comparable con la teoría?</li>
+          <li>¿Qué limitaciones experimentales existen?</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Hipótesis</h3>
+        <p>El montaje permite visualizar caos cualitativamente, aunque con diferencias por fricción y errores.</p>
+      </section>
+      <section>
+        <h3>Metodología</h3>
+        <ol>
+          <li>Construcción del péndulo</li>
+          <li>Grabación del movimiento</li>
+          <li>Análisis con Tracker</li>
+          <li>Modelo lagrangiano</li>
+          <li>Simulación numérica en Python</li>
+          <li>Comparación teoría-experimento</li>
+        </ol>
+      </section>
+      <section>
+        <h3>Bibliografía</h3>
+        <ul>
+          <li>Goldstein, Classical Mechanics</li>
+          <li>Strogatz, Nonlinear Dynamics and Chaos</li>
+          <li>Landau & Lifshitz, Mechanics</li>
+          <li>Denny, Am. J. Phys. (2002)</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize();
+  </script>
+</body>
+</html>
