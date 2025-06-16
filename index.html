@@ -7,18 +7,25 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <style>
     body {
-      background-color: #f2f2f2;
-      color: #444;
+      background-color: #e0e0e0;
+      color: #222;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 22px;
     }
     .reveal h1, .reveal h2, .reveal h3 {
-      color: #2c2c2c;
+      color: #111;
+      font-weight: 600;
     }
     .reveal section {
-      padding: 20px;
+      padding: 40px;
     }
     .reveal ul, .reveal ol {
-      margin-left: 30px;
+      margin-left: 0;
+      padding-left: 1.2em;
+    }
+    .reveal ul li, .reveal ol li {
+      margin-bottom: 12px;
+      line-height: 1.5em;
     }
     .reveal strong {
       color: #000;
@@ -28,15 +35,18 @@
 <body>
   <div class="reveal">
     <div class="slides">
+
       <section>
         <h2>Análisis experimental del péndulo doble</h2>
         <p>y su relación con la formulación lagrangiana</p>
         <p><strong>John Mauricio Mesa Echeverri</strong><br><strong>Aleph Sebastián Enciso Cruz</strong><br>Universidad de Antioquia</p>
       </section>
+
       <section>
         <h3>Objetivo general</h3>
         <p>Mostrar que el péndulo doble permite observar comportamientos caóticos y evidenciar sensibilidad a condiciones iniciales, introduciendo conceptos de sistemas no lineales.</p>
       </section>
+
       <section>
         <h3>Objetivos específicos</h3>
         <ul>
@@ -48,6 +58,7 @@
           <li>Comparar resultados teóricos y experimentales</li>
         </ul>
       </section>
+
       <section>
         <h3>Introducción (1/2)</h3>
         <ul>
@@ -56,6 +67,7 @@
           <li>Modelado con restricciones complejas</li>
         </ul>
       </section>
+
       <section>
         <h3>Introducción (2/2)</h3>
         <ul>
@@ -64,6 +76,7 @@
           <li>Ejemplo ideal de sistemas no lineales</li>
         </ul>
       </section>
+
       <section>
         <h3>Modelo teórico</h3>
         <p>Coordenadas: &theta;<sub>1</sub>, &theta;<sub>2</sub></p>
@@ -71,6 +84,7 @@
         <p>Ecuaciones de Euler-Lagrange:</p>
         <code>&#8706;L/&#8706;q<sub>i</sub> - d/dt (&#8706;L/&#8706;&#775;q<sub>i</sub>) = 0</code>
       </section>
+
       <section>
         <h3>Planteamiento del problema</h3>
         <ul>
@@ -79,10 +93,12 @@
           <li>¿Qué limitaciones experimentales existen?</li>
         </ul>
       </section>
+
       <section>
         <h3>Hipótesis</h3>
         <p>El montaje permite visualizar caos cualitativamente, aunque con diferencias por fricción y errores.</p>
       </section>
+
       <section>
         <h3>Metodología</h3>
         <ol>
@@ -94,6 +110,7 @@
           <li>Comparación teoría-experimento</li>
         </ol>
       </section>
+
       <section>
         <h3>Bibliografía</h3>
         <ul>
@@ -103,8 +120,10 @@
           <li>Denny, Am. J. Phys. (2002)</li>
         </ul>
       </section>
+
     </div>
   </div>
+
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
   <script>
     Reveal.initialize();
