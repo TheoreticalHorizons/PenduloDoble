@@ -1,89 +1,138 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación: Análisis Experimental y Teórico del Péndulo Doble</title>
-    <link rel="stylesheet" href="https://revealjs.com/dist/reveal.css">
-    <link rel="stylesheet" href="https://revealjs.com/dist/theme/white.css">
+    <!-- Estilos locales de Reveal.js -->
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+    <!-- Estilos personalizados -->
     <style>
+        /* Estilos inspirados en el póster: fondo blanco, negro para texto, azul y naranja para acentos */
+        .reveal {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        .reveal h1, .reveal h2 {
+            color: #000000;
+            text-align: left;
+        }
+        .reveal p {
+            color: #000000;
+            text-align: left;
+        }
         .reveal section img {
             max-width: 80%;
             height: auto;
+            border: 2px solid #007BFF; /* Borde azul */
+            border-radius: 5px;
         }
-        .reveal h1, .reveal h2, .reveal p {
-            text-align: left;
+        .reveal .legend-blue {
+            color: #007BFF; /* Azul para leyendas */
+        }
+        .reveal .legend-orange {
+            color: #FD7E14; /* Naranja para leyendas */
+        }
+        .reveal .controls {
+            color: #007BFF;
+        }
+        .reveal .progress {
+            background: #FD7E14;
+        }
+        /* Ajuste para mejor legibilidad */
+        .reveal pre {
+            font-size: 0.8em;
         }
     </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Análisis Experimental y Teórico del Péndulo Doble: Caos Determinista y Mecánica Lagrangiana</h1>
+                <p>John Mauricio Mesa Echeverri<sup>1 †</sup></p>
+                <p>Aleph Sebastián Enciso Cruz<sup>1 ‡</sup></p>
+                <p><sup>1</sup>Instituto de Física, Universidad de Antioquia UdeA, Calle 70 No. 52-21, Medellín, Colombia</p>
+            </section>
 
+            <section>
+                <h2>Resumen</h2>
+                <p>Este trabajo estudia el comportamiento dinámico del péndulo doble acoplado, un sistema mecánico que exhibe caos determinista debido a su naturaleza no lineal. Se construyó un montaje experimental con dos varillas articuladas, y se registró su movimiento mediante videos analizados con el software Tracker para obtener trayectorias angulares.</p>
+                <p>Las ecuaciones de movimiento se derivaron utilizando el formalismo lagrangiano y se resolvieron numéricamente en Python con el método Radau. Se compararon las trayectorias experimentales y simuladas, observando sensibilidad a las condiciones iniciales y patrones caóticos.</p>
+                <p>Los resultados confirman cualitativamente la presencia de caos determinista, aunque se identificaron discrepancias debido a fricción y limitaciones experimentales. Este estudio introduce conceptos fundamentales de mecánica clásica, sistemas no lineales y caos.</p>
+            </section>
 
-    
-        
-            
-                Análisis Experimental y Teórico del Péndulo Doble: Caos Determinista y Mecánica Lagrangiana
-                John Mauricio Mesa Echeverri1 †
-                Aleph Sebastián Enciso Cruz1 ‡
-                1Instituto de Física, Universidad de Antioquia UdeA, Calle 70 No. 52-21, Medellín, Colombia
-            
-            
-                Resumen
-                Este trabajo estudia el comportamiento dinámico del péndulo doble acoplado, un sistema mecánico que exhibe caos determinista debido a su naturaleza no lineal. Se construyó un montaje experimental con dos varillas articuladas, y se registró su movimiento mediante videos analizados con el software Tracker para obtener trayectorias angulares.
-                Las ecuaciones de movimiento se derivaron utilizando el formalismo lagrangiano y se resolvieron numéricamente en Python con el método Radau. Se compararon las trayectorias experimentales y simuladas, observando sensibilidad a las condiciones iniciales y patrones caóticos.
-                Los resultados confirman cualitativamente la presencia de caos determinista, aunque se identificaron discrepancias debido a fricción y limitaciones experimentales. Este estudio introduce conceptos fundamentales de mecánica clásica, sistemas no lineales y caos.
-            
-            
-                Introducción
-                El péndulo doble es un sistema mecánico que combina simplicidad estructural con una dinámica compleja, siendo un ejemplo clásico de caos determinista. A diferencia del péndulo simple, cuyas ecuaciones son lineales bajo pequeñas oscilaciones, el péndulo doble presenta un comportamiento no lineal que produce trayectorias impredecibles para ciertas condiciones iniciales.
-                Este caos determinista, caracterizado por una extrema sensibilidad a las condiciones iniciales, es el foco de este trabajo. A través de experimentos y simulaciones, exploramos estos fenómenos para entender mejor los sistemas no lineales.
-                
-            
-            
-                Metodología Experimental
-                Se construyó un montaje con dos varillas articuladas. El movimiento fue registrado en videos y analizado con el software Tracker para obtener las trayectorias angulares de las varillas.
-                Datos procesados desde archivos Excel para graficar ángulos, velocidades y energías.
-                <img src="placeholder_experimental_setup.png" alt="Montaje experimental del péndulo doble">
-            
-            
-                Metodología Teórica
-                Las ecuaciones de movimiento se derivaron usando el formalismo lagrangiano.
-                Se resolvieron numéricamente en Python utilizando el método Radau de solve_ivp.
-                Parámetros: m = 0.38 kg, l = 0.31 m, g = 9.77 m/s², b = 0.0075 (coeficiente de amortiguamiento).
-                <img src="placeholder_equations.png" alt="Ecuaciones lagrangianas del péndulo doble">
-            
-            
-                Resultados: Energía vs Tiempo
-                <img src="image1.png" alt="Energía vs Tiempo para una condición, mostrando decaimiento rápido a cero">
-                <img src="image2.png" alt="Energía vs Tiempo para otra condición, decaimiento más lento">
-                La energía mecánica total disminuye con el tiempo debido a la fricción en el sistema experimental.
-            
-            
-                Resultados: Ángulos vs Tiempo
-                <img src="image3.png" alt="Ángulos vs Tiempo para Varilla 1 en dos condiciones">
-                <img src="image4.png" alt="Ángulos vs Tiempo para Varilla 1 y 2 en condición superior e inferior">
-                Oscilaciones amortiguadas, mostrando comportamiento caótico inicial que se estabiliza.
-            
-            
-                Resultados: Espacios Fásicos
-                <img src="image5.png" alt="Espacio fásico para θ1 y dθ1, mostrando espiral hacia el origen">
-                <img src="image6.png" alt="Otro espacio fásico para θ1">
-                <img src="image7.png" alt="Espacio fásico para θ2">
-                Las trayectorias en el espacio fásico ilustran el decaimiento de la energía y el comportamiento caótico.
-            
-            
-                Discusión: Sensibilidad a Condiciones Iniciales
-                <img src="image8.png" alt="Ángulos vs Tiempo para Varillas en superior e inferior">
-                <img src="image9.png" alt="Energía vs Tiempo para S1 y S2">
-                Pequeñas diferencias en condiciones iniciales llevan a trayectorias divergentes, confirmando caos determinista.
-            
-            
-                Conclusiones
-                El estudio confirma cualitativamente la presencia de caos determinista en el péndulo doble.
-                Discrepancias entre experimento y simulación se atribuyen a fricción y limitaciones experimentales.
-                Este trabajo introduce conceptos clave de mecánica no lineal y caos.
-            
-        
-    
-    <script src="https://revealjs.com/dist/reveal.js"></script>
+            <section>
+                <h2>Introducción</h2>
+                <p>El péndulo doble es un sistema mecánico que combina simplicidad estructural con una dinámica compleja, siendo un ejemplo clásico de caos determinista. A diferencia del péndulo simple, cuyas ecuaciones son lineales bajo pequeñas oscilaciones, el péndulo doble presenta un comportamiento no lineal que produce trayectorias impredecibles para ciertas condiciones iniciales.</p>
+                <p>Este caos determinista, caracterizado por una extrema sensibilidad a las condiciones iniciales, es el foco de este trabajo. A través de experimentos y simulaciones, exploramos estos fenómenos para entender mejor los sistemas no lineales.</p>
+            </section>
+
+            <section>
+                <h2>Metodología Experimental</h2>
+                <p>Se construyó un montaje con dos varillas articuladas. El movimiento fue registrado en videos y analizado con el software Tracker para obtener las trayectorias angulares de las varillas.</p>
+                <p>Datos procesados desde archivos Excel para graficar ángulos, velocidades y energías.</p>
+                <img src="images/placeholder_experimental_setup.png" alt="Montaje experimental del péndulo doble">
+            </section>
+
+            <section>
+                <h2>Metodología Teórica</h2>
+                <p>Las ecuaciones de movimiento se derivaron usando el formalismo lagrangiano.</p>
+                <p>Se resolvieron numéricamente en Python utilizando el método Radau de solve_ivp.</p>
+                <p>Parámetros: m = 0.38 kg, l = 0.31 m, g = 9.77 m/s², b = 0.0075 (coeficiente de amortiguamiento).</p>
+                <img src="images/placeholder_equations.png" alt="Ecuaciones lagrangianas del péndulo doble">
+            </section>
+
+            <section>
+                <h2>Resultados: Energía vs Tiempo</h2>
+                <img src="images/Energia_vs_Tiempo_1.png" alt="Energía vs Tiempo para una condición, mostrando decaimiento rápido a cero">
+                <img src="images/Energia_vs_Tiempo_2.png" alt="Energía vs Tiempo para otra condición, decaimiento más lento">
+                <p>La energía mecánica total disminuye con el tiempo debido a la fricción en el sistema experimental.</p>
+            </section>
+
+            <section>
+                <h2>Resultados: Ángulos vs Tiempo</h2>
+                <img src="images/Angulos_vs_Tiempo_Cond1_Varilla1.png" alt="Ángulos vs Tiempo para Varilla 1 en condición 1">
+                <img src="images/Angulos_vs_Tiempo_Cond1_Varilla2.png" alt="Ángulos vs Tiempo para Varilla 1 y 2 en condición 1">
+                <img src="images/Angulos_vs_Tiempo_Cond2_Varilla1.png" alt="Ángulos vs Tiempo para Varilla 1 en condición 2">
+                <img src="images/Angulos_vs_Tiempo_Cond2_Varilla2.png" alt="Ángulos vs Tiempo para Varilla 2 en condición 2">
+                <p class="legend-blue">Oscilaciones amortiguadas en azul</p>
+                <p class="legend-orange">y naranja, mostrando comportamiento caótico inicial que se estabiliza.</p>
+            </section>
+
+            <section>
+                <h2>Resultados: Espacios Fásicos</h2>
+                <img src="images/Fase_Theta1_dTheta1.png" alt="Espacio fásico para θ1 y dθ1, mostrando espiral hacia el origen">
+                <img src="images/Fase_Theta1_dTheta1_2.png" alt="Otro espacio fásico para θ1">
+                <img src="images/Fase_Theta2_dTheta2.png" alt="Espacio fásico para θ2">
+                <p>Las trayectorias en el espacio fásico ilustran el decaimiento de la energía y el comportamiento caótico.</p>
+            </section>
+
+            <section>
+                <h2>Discusión: Sensibilidad a Condiciones Iniciales</h2>
+                <img src="images/Angulos_vs_Tiempo_Superior_Inferior.png" alt="Ángulos vs Tiempo para Varillas en superior e inferior">
+                <img src="images/Energia_vs_Tiempo_S1_S2.png" alt="Energía vs Tiempo para S1 y S2">
+                <p>Pequeñas diferencias en condiciones iniciales llevan a trayectorias divergentes, confirmando caos determinista.</p>
+            </section>
+
+            <section>
+                <h2>Conclusiones</h2>
+                <p>El estudio confirma cualitativamente la presencia de caos determinista en el péndulo doble.</p>
+                <p>Discrepancias entre experimento y simulación se atribuyen a fricción y limitaciones experimentales.</p>
+                <p>Este trabajo introduce conceptos clave de mecánica no lineal y caos.</p>
+            </section>
+        </div>
+    </div>
+    <!-- Script local de Reveal.js -->
+    <script src="js/reveal.js"></script>
     <script>
-        Reveal.initialize();
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide'
+        });
     </script>
-
-
-Nota: Reemplaza los src de las imágenes (e.g., "image1.png") con las rutas reales a tus archivos de imágenes subidos. Si tienes más detalles del póster completo o imágenes adicionales, puedes agregar más slides o ajustar el contenido. Esta es una presentación básica usando Reveal.js para diapositivas interactivas.
+</body>
+</html>
