@@ -2,36 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Póster Interactivo – Péndulo Doble</title>
+  <title>Péndulo Doble Acoplado — Versión Extendida</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Reveal.js desde CDN -->
+  <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-menu/menu.css">
 
   <style>
-    /* Colores inspirados en el póster */
-    .reveal {
-      font-family: "Helvetica", sans-serif;
-      color: #111;
+    body {
+      background: #fafafa;
     }
-    h1, h2, h3 {
-      color: #800000; /* rojo oscuro para títulos */
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: #b30000; /* rojo estilo póster */
     }
-    .slides section {
-      text-align: left;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .reveal section {
+      text-align: justify;
     }
     .two-col {
       display: flex;
-      gap: 20px;
+      gap: 1rem;
     }
-    .two-col img {
+    .two-col figure {
       flex: 1;
+      text-align: center;
+    }
+    .caption {
+      font-size: 0.8em;
+      color: #444;
     }
   </style>
 </head>
@@ -40,105 +38,187 @@
 <div class="reveal">
   <div class="slides">
 
-    <!-- Portada -->
+    <!-- INTRODUCCIÓN -->
     <section>
-      <h1>Péndulo Doble: Caos Determinista</h1>
-      <h3>Análisis Experimental y Teórico</h3>
-      <p><strong>John Mauricio Mesa Echeverri</strong><br>
-         <strong>Aleph Sebastián Enciso Cruz</strong></p>
-      <p><em>Instituto de Física, Universidad de Antioquia</em></p>
+      <h1>Péndulo Doble Acoplado</h1>
+      <h3>Caos determinista y formalismo lagrangiano</h3>
+      <p>
+        Este sitio web complementa el póster académico. Aquí se ofrece una explicación más detallada del 
+        montaje experimental, la simulación numérica y la interpretación de los resultados obtenidos.  
+      </p>
     </section>
 
-    <!-- Resumen -->
+    <!-- MARCO TEÓRICO -->
     <section>
-      <h2>Resumen</h2>
-      <p>Se estudió el <b>péndulo doble acoplado</b>, un sistema no lineal que exhibe <b>caos determinista</b>. 
-         Se construyó un montaje experimental, se analizaron videos con Tracker y se resolvieron numéricamente las ecuaciones de movimiento mediante el <b>formalismo lagrangiano</b> en Python (método Radau). 
-         Los resultados muestran sensibilidad a condiciones iniciales y patrones caóticos, con diferencias atribuibles a la fricción y limitaciones experimentales.</p>
+      <h2>Marco Teórico</h2>
+      <p>
+        El <strong>péndulo doble</strong> consiste en dos varillas articuladas en serie. Este sistema es no lineal y 
+        exhibe <strong>caos determinista</strong>: pequeñas variaciones iniciales producen trayectorias que divergen 
+        significativamente a largo plazo.
+      </p>
+      <p>
+        El <strong>formalismo lagrangiano</strong> se utiliza para derivar las ecuaciones de movimiento:
+      </p>
+      <p style="text-align:center;">
+        <em>L = T - V</em>  
+      </p>
+      <p>
+        donde <em>T</em> es la energía cinética y <em>V</em> la energía potencial.  
+        Aplicando las ecuaciones de Euler–Lagrange:
+      </p>
+      <p style="text-align:center;">
+        ∂L/∂θ - d/dt(∂L/∂θ̇) = 0
+      </p>
+      <p>
+        se obtienen ecuaciones diferenciales acopladas y no lineales que explican el comportamiento caótico observado.
+      </p>
     </section>
 
-    <!-- Teoría -->
+    <!-- METODOLOGÍA -->
     <section>
-      <h2>Teoría</h2>
-      <p>El péndulo doble acoplado se describe con el formalismo lagrangiano:</p>
-      <p><em>L = T – V</em></p>
+      <h2>Metodología</h2>
+      <h3>Montaje experimental</h3>
+      <p>
+        Se construyó un péndulo doble con dos varillas de madera (<em>l</em> = 0.31 m, <em>m</em> = 0.38 kg), unidas con 
+        baja fricción. El sistema se grabó en video con una cámara fija y fondo contrastante.  
+        El software <strong>Tracker</strong> permitió extraer posiciones y ángulos.
+      </p>
+      <h3>Simulación numérica</h3>
+      <p>
+        Las ecuaciones se resolvieron en Python (SciPy, método <strong>Radau</strong>) con tolerancias de 10⁻⁸.  
+        Se simularon 30 s con 200 puntos, ajustando condiciones iniciales a los valores experimentales.  
+      </p>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section>
+      <h2>Resultados</h2>
+      <p>
+        A continuación se comparan simulaciones y experimentos en energía mecánica, ángulos y espacio fásico.
+      </p>
+    </section>
+
+    <!-- Energía -->
+    <section>
+      <h2>Energía mecánica total</h2>
+      <p>
+        En la simulación se observa una <strong>caída inicial</strong> de la energía y estabilización posterior.  
+        Este efecto proviene de errores numéricos amplificados por el carácter caótico.  
+      </p>
+      <p>
+        En el experimento, la energía también decae, pero por fricción y resistencia del aire.  
+        Aparece un pico anómalo cerca de t = 2 s, atribuible a ruido de medición en Tracker.
+      </p>
+      <div class="two-col">
+        <figure>
+          <img src="nsim1.png" alt="Energía sim1">
+          <figcaption class="caption">Simulación — energía total vs tiempo.</figcaption>
+        </figure>
+        <figure>
+          <img src="nexp1.png" alt="Energía exp1">
+          <figcaption class="caption">Experimento — energía total vs tiempo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Ángulos -->
+    <section>
+      <h2>Posición angular vs tiempo</h2>
+      <p>
+        La simulación muestra oscilaciones cuasi-periódicas de θ₁ y θ₂.  
+        El experimento refleja el mismo patrón general, pero con mayor ruido y divergencias después de algunos segundos.  
+      </p>
+      <div class="two-col">
+        <figure>
+          <img src="nsim2.png" alt="Ángulos sim">
+          <figcaption class="caption">Simulación — θ₁ y θ₂.</figcaption>
+        </figure>
+        <figure>
+          <img src="nexp2.png" alt="Ángulos exp">
+          <figcaption class="caption">Experimento — θ₁ y θ₂.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Fase simulación -->
+    <section>
+      <h2>Espacio fásico (simulación)</h2>
+      <p>
+        Los diagramas de fase presentan lazos y espirales que divergen con el tiempo.  
+        Esto refleja la sensibilidad extrema a las condiciones iniciales, característica del caos determinista.
+      </p>
+      <div class="two-col">
+        <figure>
+          <img src="sim1 (1).png" alt="Fase sim1">
+          <figcaption class="caption">Simulación estado 1.</figcaption>
+        </figure>
+        <figure>
+          <img src="sim2 (1).png" alt="Fase sim2">
+          <figcaption class="caption">Simulación estado 2.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Fase experimento -->
+    <section>
+      <h2>Espacio fásico (experimento)</h2>
+      <p>
+        Los experimentos reproducen cualitativamente los lazos y espirales, pero con ruido adicional y trayectorias truncadas.  
+        Esto se debe a limitaciones en la medición y disipación real de energía.
+      </p>
+      <div class="two-col">
+        <figure><img src="download (4).png" alt="fase exp 1"></figure>
+        <figure><img src="download (5).png" alt="fase exp 2"></figure>
+        <figure><img src="download (6).png" alt="fase exp 3"></figure>
+        <figure><img src="download (7).png" alt="fase exp 4"></figure>
+      </div>
+    </section>
+
+    <!-- DISCUSIÓN -->
+    <section>
+      <h2>Discusión</h2>
       <ul>
-        <li>Energía cinética: incluye términos de acoplamiento</li>
-        <li>Energía potencial: depende de la gravedad</li>
-        <li>Ecuaciones de Euler-Lagrange → sistema no lineal</li>
+        <li>El modelo lagrangiano explica las tendencias observadas en simulación.</li>
+        <li>El experimento valida cualitativamente los resultados, con diferencias atribuibles a fricción, ruido y errores de medición.</li>
+        <li>El sistema muestra clara sensibilidad a condiciones iniciales: trayectorias inicialmente cercanas divergen con rapidez.</li>
+        <li>Las herramientas computacionales (Python) y experimentales (Tracker) se complementan eficazmente para estudiar sistemas caóticos.</li>
       </ul>
     </section>
 
-    <!-- Procedimiento experimental -->
-    <section>
-      <h2>Procedimiento Experimental</h2>
-      <ul>
-        <li>Péndulo construido con varillas de madera (l = 0.31 m, m = 0.38 kg).</li>
-        <li>Movimiento registrado con cámara perpendicular al plano.</li>
-        <li>Análisis en Tracker: extracción de θ₁(t), θ₂(t) y posiciones (x,y).</li>
-        <li>Simulación en Python: SciPy Radau, 0–30 s, 200 puntos.</li>
-      </ul>
-    </section>
-
-    <!-- Resultados: Energía -->
-    <section>
-      <h2>Resultados: Energía Mecánica</h2>
-      <div class="two-col">
-        <img src="sim1_energy.png" alt="Simulación energía">
-        <img src="download_energy.png" alt="Experimento energía">
-      </div>
-      <p>La simulación muestra caída inicial y estabilización. El experimento reproduce la tendencia, con un pico anómalo cerca de t = 2 s.</p>
-    </section>
-
-    <!-- Resultados: Ángulo vs tiempo -->
-    <section>
-      <h2>Resultados: Ángulos vs Tiempo</h2>
-      <div class="two-col">
-        <img src="sim1_angles.png" alt="Simulación ángulos">
-        <img src="download_angles.png" alt="Experimento ángulos">
-      </div>
-      <p>Se observan oscilaciones cuasi-periódicas. Las trayectorias divergen con pequeñas variaciones iniciales.</p>
-    </section>
-
-    <!-- Resultados: Espacio fásico -->
-    <section>
-      <h2>Resultados: Espacio Fásico</h2>
-      <div class="two-col">
-        <img src="sim_phase.png" alt="Simulación espacio fásico">
-        <img src="download_phase.png" alt="Experimento espacio fásico">
-      </div>
-      <p>Las simulaciones muestran lazos y espirales divergentes. Los experimentos reproducen cualitativamente este patrón, con ruido y lazos truncados.</p>
-    </section>
-
-    <!-- Conclusiones -->
+    <!-- CONCLUSIONES -->
     <section>
       <h2>Conclusiones</h2>
       <ul>
-        <li>El péndulo doble es un sistema caótico: pequeñas variaciones iniciales generan trayectorias divergentes.</li>
-        <li>Simulación y experimento concuerdan cualitativamente pese a diferencias por fricción y ruido.</li>
-        <li>El formalismo lagrangiano describe adecuadamente la dinámica observada.</li>
-        <li>El análisis en espacio fásico confirma el carácter caótico del sistema.</li>
+        <li>El péndulo doble confirma su naturaleza caótica: pequeñas variaciones iniciales producen trayectorias divergentes.</li>
+        <li>Simulación y experimento coinciden cualitativamente, validando el modelo.</li>
+        <li>El formalismo lagrangiano permitió derivar y comprender las ecuaciones no lineales del sistema.</li>
+        <li>El análisis de energía y fase evidenció disipación y ruido en el experimento frente al modelo ideal.</li>
       </ul>
     </section>
 
-    <!-- Referencias -->
+    <!-- REFERENCIAS -->
     <section>
       <h2>Referencias</h2>
-      <p>[1] Goldstein et al. (2002) <i>Classical Mechanics</i><br>
-         [2] Landau & Lifshitz (1976) <i>Mechanics</i><br>
-         [3] Press & Teukolsky (2007) <i>Numerical Recipes</i><br>
-         [4] Wolfram Alpha (2025)</p>
+      <ul style="font-size:0.8em;">
+        <li>Goldstein, H., Poole, C., & Safko, J. (2002). <em>Classical Mechanics</em> (3rd ed.). Addison-Wesley.</li>
+        <li>Landau, L. D., & Lifshitz, E. M. (1976). <em>Mechanics</em> (Vol. 1). Pergamon Press.</li>
+        <li>Press, W. H., & Teukolsky, S. (2007). <em>Numerical Recipes</em> (3rd ed.). Cambridge Univ. Press.</li>
+        <li>Strogatz, S. (2015). <em>Nonlinear Dynamics and Chaos</em>. Westview Press.</li>
+      </ul>
     </section>
 
   </div>
 </div>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-menu/menu.js"></script>
 <script>
   Reveal.initialize({
     hash: true,
-    slideNumber: true
+    plugins: [ RevealMenu ]
   });
 </script>
+
 </body>
 </html>
