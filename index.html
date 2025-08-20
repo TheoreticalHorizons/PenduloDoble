@@ -1,134 +1,89 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <title>Péndulo Doble - Anteproyecto</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
-  <style>
-    ol, li{
-      list-style-type: none;
-    }
-    body {
-      background-color: #e0e0e0;
-      color: #222;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 22px;
-    }
-    .reveal h1, .reveal h2, .reveal h3 {
-      color: #111;
-      font-weight: 600;
-    }
-    .reveal section {
-      padding: 40px;
-    }
-    .reveal ul, .reveal ol {
-      margin-left: 0;
-      padding-left: 1.2em;
-    }
-    .reveal ul li, .reveal ol li {
-      margin-bottom: 12px;
-      line-height: 1.5em;
-    }
-    .reveal strong {
-      color: #000;
-    }
-  </style>
-</head>
-<body>
-  <div class="reveal">
-    <div class="slides">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Análisis Experimental y Teórico del Péndulo Doble</title>
+    <link rel="stylesheet" href="https://revealjs.com/dist/reveal.css">
+    <link rel="stylesheet" href="https://revealjs.com/dist/theme/white.css">
+    <style>
+        .reveal section img {
+            max-width: 80%;
+            height: auto;
+        }
+        .reveal h1, .reveal h2, .reveal p {
+            text-align: left;
+        }
+    </style>
 
-      <section>
-        <h2>Análisis experimental del péndulo doble
-        y su relación con la formulación lagrangiana</h2>
-        <p><strong>John Mauricio Mesa Echeverri</strong><br><strong>Aleph Sebastián Enciso Cruz</strong><br>Universidad de Antioquia</p>
-      </section>
 
-      <section>
-        <h3>Resumen</h3>
-        <p>El péndulo doble es un sistema mecánico simple en su construcción, pero altamente complejo en su comportamiento dinámico. En este proyecto se construirá un péndulo doble funcional, se analizará su comportamiento y se contrastará con el modelo lagrangiano, como introducción a conceptos fundamentales de la mecánica clásica y el caos determinista.</p>
-      </section>
+    
+        
+            
+                Análisis Experimental y Teórico del Péndulo Doble: Caos Determinista y Mecánica Lagrangiana
+                John Mauricio Mesa Echeverri1 †
+                Aleph Sebastián Enciso Cruz1 ‡
+                1Instituto de Física, Universidad de Antioquia UdeA, Calle 70 No. 52-21, Medellín, Colombia
+            
+            
+                Resumen
+                Este trabajo estudia el comportamiento dinámico del péndulo doble acoplado, un sistema mecánico que exhibe caos determinista debido a su naturaleza no lineal. Se construyó un montaje experimental con dos varillas articuladas, y se registró su movimiento mediante videos analizados con el software Tracker para obtener trayectorias angulares.
+                Las ecuaciones de movimiento se derivaron utilizando el formalismo lagrangiano y se resolvieron numéricamente en Python con el método Radau. Se compararon las trayectorias experimentales y simuladas, observando sensibilidad a las condiciones iniciales y patrones caóticos.
+                Los resultados confirman cualitativamente la presencia de caos determinista, aunque se identificaron discrepancias debido a fricción y limitaciones experimentales. Este estudio introduce conceptos fundamentales de mecánica clásica, sistemas no lineales y caos.
+            
+            
+                Introducción
+                El péndulo doble es un sistema mecánico que combina simplicidad estructural con una dinámica compleja, siendo un ejemplo clásico de caos determinista. A diferencia del péndulo simple, cuyas ecuaciones son lineales bajo pequeñas oscilaciones, el péndulo doble presenta un comportamiento no lineal que produce trayectorias impredecibles para ciertas condiciones iniciales.
+                Este caos determinista, caracterizado por una extrema sensibilidad a las condiciones iniciales, es el foco de este trabajo. A través de experimentos y simulaciones, exploramos estos fenómenos para entender mejor los sistemas no lineales.
+                
+            
+            
+                Metodología Experimental
+                Se construyó un montaje con dos varillas articuladas. El movimiento fue registrado en videos y analizado con el software Tracker para obtener las trayectorias angulares de las varillas.
+                Datos procesados desde archivos Excel para graficar ángulos, velocidades y energías.
+                <img src="placeholder_experimental_setup.png" alt="Montaje experimental del péndulo doble">
+            
+            
+                Metodología Teórica
+                Las ecuaciones de movimiento se derivaron usando el formalismo lagrangiano.
+                Se resolvieron numéricamente en Python utilizando el método Radau de solve_ivp.
+                Parámetros: m = 0.38 kg, l = 0.31 m, g = 9.77 m/s², b = 0.0075 (coeficiente de amortiguamiento).
+                <img src="placeholder_equations.png" alt="Ecuaciones lagrangianas del péndulo doble">
+            
+            
+                Resultados: Energía vs Tiempo
+                <img src="image1.png" alt="Energía vs Tiempo para una condición, mostrando decaimiento rápido a cero">
+                <img src="image2.png" alt="Energía vs Tiempo para otra condición, decaimiento más lento">
+                La energía mecánica total disminuye con el tiempo debido a la fricción en el sistema experimental.
+            
+            
+                Resultados: Ángulos vs Tiempo
+                <img src="image3.png" alt="Ángulos vs Tiempo para Varilla 1 en dos condiciones">
+                <img src="image4.png" alt="Ángulos vs Tiempo para Varilla 1 y 2 en condición superior e inferior">
+                Oscilaciones amortiguadas, mostrando comportamiento caótico inicial que se estabiliza.
+            
+            
+                Resultados: Espacios Fásicos
+                <img src="image5.png" alt="Espacio fásico para θ1 y dθ1, mostrando espiral hacia el origen">
+                <img src="image6.png" alt="Otro espacio fásico para θ1">
+                <img src="image7.png" alt="Espacio fásico para θ2">
+                Las trayectorias en el espacio fásico ilustran el decaimiento de la energía y el comportamiento caótico.
+            
+            
+                Discusión: Sensibilidad a Condiciones Iniciales
+                <img src="image8.png" alt="Ángulos vs Tiempo para Varillas en superior e inferior">
+                <img src="image9.png" alt="Energía vs Tiempo para S1 y S2">
+                Pequeñas diferencias en condiciones iniciales llevan a trayectorias divergentes, confirmando caos determinista.
+            
+            
+                Conclusiones
+                El estudio confirma cualitativamente la presencia de caos determinista en el péndulo doble.
+                Discrepancias entre experimento y simulación se atribuyen a fricción y limitaciones experimentales.
+                Este trabajo introduce conceptos clave de mecánica no lineal y caos.
+            
+        
+    
+    <script src="https://revealjs.com/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize();
+    </script>
 
-      <section>
-        <h3>Introducción (1/2)</h3>
-        <ul>
-          <li>La formulación lagrangiana describe sistemas con restricciones complejas.</li>
-          <li>El péndulo doble: sistema no lineal y caótico, muy sensible a condiciones iniciales.</li>
-          <li>Permite explorar caos determinista de forma visual y concreta.</li>
-        </ul>
-      </section>
 
-      <section>
-        <h3>Introducción (2/2)</h3>
-        <p>Modelo lagrangiano:</p>
-        <p>L = T - V</p>
-        <p>Ecuaciones de Euler-Lagrange:</p>
-        <code>d/dt (∂L/∂ẋᵢ) - ∂L/∂xᵢ = 0</code>
-      </section>
-
-      <section>
-        <h3>Planteamiento del problema</h3>
-        <ul>
-          <li>¿Puede un montaje casero capturar correctamente el comportamiento caótico del péndulo doble?</li>
-          <li>¿Qué limitaciones surgen al comparar teoría y experimento?</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Hipótesis</h3>
-        <p>El montaje experimental permitirá registrar patrones caóticos y diferencias debido a condiciones iniciales, aunque no coincidirá exactamente con la teoría debido a la fricción, errores de medición y sensibilidad extrema.</p>
-      </section>
-
-      <section>
-        <h3>Objetivo general</h3>
-        <p>Mostrar que el péndulo doble, aun con un montaje experimental sencillo, permite observar comportamientos caóticos y evidenciar la sensibilidad a las condiciones iniciales.</p>
-      </section>
-
-      <section>
-        <h3>Objetivos específicos</h3>
-        <ul>
-          <li>Construir un péndulo doble funcional</li>
-          <li>Registrar el movimiento angular</li>
-          <li>Analizar los datos con Tracker</li>
-          <li>Formular y simular el modelo lagrangiano</li>
-          <li>Resolver las ecuaciones con Python</li>
-          <li>Comparar resultados teóricos y experimentales</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Metodología (1/2)</h3>
-        <ol>
-          <li>Construcción del péndulo doble (materiales ligeros y articulaciones con baja fricción)</li>
-          <li>Grabación del movimiento con cámara fija</li>
-          <li>Extracción de datos angulares con Tracker</li>
-        </ol>
-      </section>
-
-      <section>
-        <h3>Metodología (2/2)</h3>
-        <ol start="4">
-          <li>Formulación del modelo lagrangiano con energías T y V</li>
-          <li>Resolución numérica con Python (Runge-Kutta)</li>
-          <li>Comparación cualitativa entre simulaciones y datos experimentales</li>
-        </ol>
-      </section>
-
-      <section>
-        <h3>Bibliografía</h3>
-        <ul>
-          <li>"Algunos elementos del diseño experimental y la redacción del presente trabajo fueron asistidos por el modelo de lenguaje ChatGPT, desarrollado por OpenAI."</li>
-          <li>Goldstein, H., Poole, C., & Safko, J. (2002). Classical Mechanics (3rd ed.). Addison-Wesley.</li>
-        </ul>
-      </section>
-
-    </div>
-  </div>
-
-  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
-  <script>
-    Reveal.initialize();
-  </script>
-</body>
-</html>
+Nota: Reemplaza los src de las imágenes (e.g., "image1.png") con las rutas reales a tus archivos de imágenes subidos. Si tienes más detalles del póster completo o imágenes adicionales, puedes agregar más slides o ajustar el contenido. Esta es una presentación básica usando Reveal.js para diapositivas interactivas.
