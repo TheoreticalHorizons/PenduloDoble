@@ -2,26 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Póster Científico - Péndulo Doble</title>
+  <title>Péndulo Doble - Resultados y Conclusiones</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme">
+
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
-    .reveal section h2 {
-      font-size: 1.8em;
-      color: #ff5555;
+    /* ==== Tema personalizado con colores del póster ==== */
+    body {
+      background: #ffffff; /* fondo blanco */
+      color: #222222;      /* texto gris muy oscuro */
+      font-family: "Helvetica", "Arial", sans-serif;
     }
-    .reveal section p {
-      font-size: 1.1em;
-      text-align: justify;
+    .reveal {
+      color: #222222;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: #006633; /* verde principal */
+      font-weight: bold;
+    }
+    .reveal section p, .reveal section li {
+      font-size: 1.2em;
+    }
+    .equation {
+      font-size: 1.3em;
+      color: #444444;
+      margin-top: 10px;
+      background: #fff9cc; /* amarillo clarito de resaltado */
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: inline-block;
     }
     .reveal img {
       max-height: 400px;
-      border-radius: 10px;
-      margin-top: 10px;
+      border-radius: 12px;
+      margin-top: 15px;
+      border: 3px solid #006633; /* borde verde */
+      background: #ffffff;
     }
   </style>
 </head>
@@ -32,60 +53,39 @@
 
     <!-- Portada -->
     <section>
-      <h1>Péndulo Doble</h1>
-      <h3>Análisis Experimental y Teórico</h3>
-      <p>John Mauricio Mesa Echeverri<br>Aleph Sebastián Enciso Cruz</p>
-      <p><small>Universidad de Antioquia</small></p>
+      <h2>Péndulo doble</h2>
+      <h3>Análisis experimental y teórico</h3>
+      <img src="montaje.png" alt="Montaje experimental del péndulo doble">
+      <p class="equation">Caos ⇢ Simulación + Experimento</p>
     </section>
 
-    <!-- Introducción a Resultados -->
+    <!-- Figura 1: Energía -->
     <section>
-      <h2>Resultados y Conclusiones</h2>
-      <p>Se presentan comparaciones entre <b>simulación numérica</b> y <b>datos experimentales</b> 
-         para energía, ángulos y espacios de fase. 
-         El objetivo es identificar la presencia de <b>caos determinista</b>.</p>
-    </section>
-
-    <!-- Figura 1 -->
-    <section>
-      <h2>Figura 1: Energía mecánica</h2>
-      <p>En el modelo ideal la energía se conserva, pero al incluir un término disipativo 
-         (amortiguamiento <i>b</i>) y fricción experimental se observa una caída inicial y 
-         estabilización.</p>
-      <p>El pico anómalo en el experimento (≈2s) es un error de digitalización con Tracker.</p>
+      <h2>Energía mecánica</h2>
       <img src="fig1.png" alt="Energía mecánica simulación y experimento">
+      <p class="equation">\(E = T + V \;\; \Rightarrow \;\; \text{Disipación}\)</p>
     </section>
 
-    <!-- Figura 2 -->
+    <!-- Figura 2: Ángulos -->
     <section>
-      <h2>Figura 2: Ángulos vs tiempo</h2>
-      <p>Las ecuaciones no lineales acopladas generan oscilaciones <b>cuasi-periódicas</b>. 
-         La simulación produce curvas suaves, mientras que el experimento conserva la tendencia 
-         con mayor ruido.</p>
-      <p>La falta de periodicidad exacta confirma el carácter no lineal del sistema.</p>
+      <h2>Ángulos en el tiempo</h2>
       <img src="fig2.png" alt="Ángulos simulación y experimento">
+      <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
     </section>
 
-    <!-- Figura 3 y 4 -->
+    <!-- Espacios de fase -->
     <section>
-      <h2>Figuras 3 y 4: Espacios de fase</h2>
-      <p>En el espacio de fase \((\theta, \dot{\theta})\), un péndulo lineal genera ciclos cerrados. 
-         El péndulo doble, en cambio, muestra <b>trayectorias abiertas, espirales y lazos múltiples</b>.</p>
-      <p>El Sistema 1 y el Sistema 2 divergen rápidamente, demostrando la 
-         <b>sensibilidad a condiciones iniciales</b>.</p>
+      <h2>Espacios de fase</h2>
       <img src="fig3.png" alt="Espacios de fase simulación">
       <img src="fig4.png" alt="Espacios de fase experimento">
+      <p class="equation">\((\theta, \dot{\theta}) \;\; \Rightarrow \;\; \text{trayectorias divergentes}\)</p>
     </section>
 
     <!-- Conclusiones -->
     <section>
       <h2>Conclusiones</h2>
-      <ul>
-        <li>El péndulo doble es un sistema caótico: diferencias mínimas iniciales producen trayectorias divergentes.</li>
-        <li>Simulación y experimento concuerdan <b>cualitativamente</b>, aunque difieren en detalle por fricción y ruido.</li>
-        <li>El formalismo lagrangiano permite derivar y comprender la dinámica observada.</li>
-        <li>Se valida la noción de <b>caos determinista</b>: leyes físicas precisas, pero impredecibles a largo plazo.</li>
-      </ul>
+      <img src="caos.png" alt="Representación del caos">
+      <p class="equation">\(\delta(0) \ll 1 \;\; \Rightarrow \;\; \delta(t) \gg 1\)</p>
     </section>
 
   </div>
@@ -97,7 +97,7 @@
   Reveal.initialize({
     hash: true,
     slideNumber: true,
-    transition: 'slide',
+    transition: 'fade',
   });
 </script>
 
