@@ -21,27 +21,41 @@
     .reveal {
       color: #222222;
     }
-    .reveal h1, .reveal h2, .reveal h3 {
-      color: #006633; /* verde principal */
-      font-weight: bold;
+    /* Títulos mucho más grandes */
+    .reveal h1 {
+      font-size: 2.6em;
+      color: #006633; /* verde */
     }
-    .reveal section p, .reveal section li {
-      font-size: 1.2em;
+    .reveal h2 {
+      font-size: 2.2em;
+      color: #006633;
     }
+    .reveal h3 {
+      font-size: 1.8em;
+      color: #006633;
+    }
+    /* Texto base más grande */
+    .reveal section p, 
+    .reveal section li {
+      font-size: 1.6em; /* subido */
+      line-height: 1.4;
+    }
+    /* Ecuaciones destacadas */
     .equation {
-      font-size: 1.3em;
+      font-size: 1.8em; /* grande */
       color: #444444;
-      margin-top: 10px;
-      background: #fff9cc; /* amarillo clarito de resaltado */
-      padding: 8px 14px;
-      border-radius: 8px;
+      margin-top: 20px;
+      background: #fff9cc; /* amarillo clarito */
+      padding: 12px 18px;
+      border-radius: 10px;
       display: inline-block;
     }
+    /* Imágenes grandes y con borde verde */
     .reveal img {
-      max-height: 400px;
+      max-height: 500px;
       border-radius: 12px;
-      margin-top: 15px;
-      border: 3px solid #006633; /* borde verde */
+      margin-top: 20px;
+      border: 4px solid #006633;
       background: #ffffff;
     }
   </style>
@@ -53,7 +67,7 @@
 
     <!-- Portada -->
     <section>
-      <h2>Péndulo doble</h2>
+      <h1>Péndulo doble</h1>
       <h3>Análisis experimental y teórico</h3>
       <img src="montaje.png" alt="Montaje experimental del péndulo doble">
       <p class="equation">Caos ⇢ Simulación + Experimento</p>
