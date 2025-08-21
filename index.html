@@ -60,10 +60,10 @@
       </video>
       <p class="equation">Caos Determinista ⇢ Simulación + Experimento</p>
       <aside class="notes">
-      -Explica qué es el péndulo doble y por qué es un sistema caótico.<br>
-      -Sistema determinista: un sistema donde, conociendo las condiciones iniciales y las reglas que lo gobiernan, se puede predecir exactamente el futuro. No hay azar; cada estado sigue de manera única al anterior. Ejemplo: un péndulo simple con ángulos pequeños.
-      -Caos: comportamiento donde pequeñas diferencias iniciales generan resultados muy distintos con el tiempo. Parece aleatorio, pero sigue reglas deterministas. Ejemplo: el clima.
-      -Caos determinista: un sistema determinista que muestra comportamiento caótico. Las ecuaciones son predecibles, pero la extrema sensibilidad a las condiciones iniciales hace que los resultados a largo plazo sean impredecibles. Ejemplo: el péndulo doble.
+      ➤ Explica qué es el péndulo doble<br>
+      ➤ Sistema determinista<br>
+      ➤ Caos<br>
+      ➤ Caos determinista
       </aside>
     </section>
 
@@ -77,7 +77,7 @@
         <source src="gif1mp4.mp4" type="video/mp4">
       </video>
       <aside class="notes">
-        ➤ Sistema 1 corresponde a las condiciones iniciales base: ángulos cercanos a 90° y 80°.<br>
+        ➤ Sistema 1 corresponde a las condiciones iniciales base: ángulos cercanos a 180° y 0°.<br>
         ➤ Muestra video experimental y la animación simulada.<br>
         ➤ Señala la similitud general de movimiento, pese a pequeñas diferencias.
       </aside>
@@ -123,15 +123,25 @@
       </aside>
     </section>
 
+    <section>
+      <h2>Simulación: Ángulos en el tiempo</h2>
+      <img src="ps.png" alt="Ángulos simulación">
+      <img src="psa.png" alt="Ángulos simulación">
+      <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
+      <aside class="notes">
+        ➤ Péndulo simple sin amortiguamiento<br>
+        ➤ Péndulo simple con amortiguamiento<br>
+      </aside>
+    </section>
+
     <!-- Ángulos simulación -->
     <section>
       <h2>Simulación: Ángulos en el tiempo</h2>
       <img src="nsim2.png" alt="Ángulos simulación">
       <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
       <aside class="notes">
-        ➤ A diferencia del péndulo simple, las trayectorias no son sinusoidales.<br>
+        ➤ A diferencia del péndulo simple, las trayectorias no son sinusoidales (al principio inicialmente)<br>
         ➤ El movimiento alterna fases regulares con divergencias.<br>
-        ➤ Resalta la diferencia entre dinámica lineal y no lineal.
       </aside>
     </section>
 
@@ -153,9 +163,7 @@
       <img src="pendulosimple.png" alt="Péndulo simple"><br>
       <p class="equation">Un sistema NO caótico</p>
       <aside class="notes">
-        ➤ Muestra contraste con el péndulo simple: trayectoria predecible, periódica y estable.<br>
-        ➤ Enfatiza la diferencia: linealidad vs caos.<br>
-        ➤ Es un buen ejemplo para contextualizar al público.
+        ➤ Muestra contraste con el péndulo simple: trayectoria predecible, periódica y estable. A Ángulos pequeños<br>
       </aside>
     </section>
 
@@ -168,8 +176,7 @@
       <img src="download (5).png" width="23%"><br>
       <p class="equation">\((\theta, \dot{\theta}) \;\; \Rightarrow \;\; \text{trayectorias divergentes}\)</p>
       <aside class="notes">
-        ➤ Las simulaciones generan lazos y espirales que divergen.<br>
-        ➤ El experimento reproduce cualitativamente este patrón, aunque con ruido y lazos incompletos.<br>
+        ➤ Las simulaciones generan lazos y espirales que divergen.<br>        
         ➤ Señalar cómo el espacio de fase revela el caos de manera clara.
       </aside>
     </section>
@@ -225,6 +232,7 @@
 </script>
 </body>
 </html>
+
 
 
 
