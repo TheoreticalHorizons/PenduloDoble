@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Análisis Experimental y Teórico del Péndulo Doble: Caos Determinista y Mecánica Lagrangiana - Resultados y Conclusiones</title>
+  <title>Póster interactivo - Péndulo Doble</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Reveal.js -->
@@ -12,51 +12,37 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
-    /* ==== Tema personalizado con colores del póster ==== */
+    /* ==== Tema con colores del póster ==== */
     body {
-      background: #ffffff; /* fondo blanco */
-      color: #222222;      /* texto gris muy oscuro */
+      background: #ffffff;
+      color: #222222;
       font-family: "Helvetica", "Arial", sans-serif;
     }
-    .reveal {
-      color: #222222;
-    }
-    /* Títulos mucho más grandes */
-    .reveal h1 {
-      font-size: 2.6em;
-      color: #006633; /* verde */
-    }
-    .reveal h2 {
-      font-size: 2.2em;
+    .reveal h1, .reveal h2, .reveal h3 {
       color: #006633;
     }
-    .reveal h3 {
-      font-size: 1.8em;
-      color: #006633;
-    }
-    /* Texto base más grande */
+    .reveal h1 { font-size: 2.6em; }
+    .reveal h2 { font-size: 2.2em; }
+    .reveal h3 { font-size: 1.8em; }
     .reveal section p, 
     .reveal section li {
-      font-size: 1.6em; /* subido */
+      font-size: 1.4em;
       line-height: 1.4;
     }
-    /* Ecuaciones destacadas */
     .equation {
-      font-size: 1.8em; /* grande */
-      color: #444444;
+      font-size: 1.6em;
+      color: #444;
       margin-top: 20px;
-      background: #fff9cc; /* amarillo clarito */
+      background: #fff9cc;
       padding: 12px 18px;
       border-radius: 10px;
       display: inline-block;
     }
-    /* Imágenes grandes y con borde verde */
     .reveal img {
-      max-height: 500px;
+      max-height: 450px;
       border-radius: 12px;
-      margin-top: 20px;
-      border: 4px solid #006633;
-      background: #ffffff;
+      border: 3px solid #006633;
+      background: #fff;
     }
   </style>
 </head>
@@ -67,101 +53,156 @@
 
     <!-- Portada -->
     <section>
-      <h1>Análisis Experimental y Teórico del Péndulo Doble: Caos Determinista y Mecánica Lagrangiana</h1>
-      <h3>Análisis experimental y teórico</h3>
+      <h1>Análisis Experimental y Teórico del Péndulo Doble</h1>
+      <h3>Caos determinista y Mecánica Lagrangiana</h3>
       <video controls loop width="600">
-    <source src="introv.mp4" type="video/mp4">
-  </video>
-      <br>
-      <p class="equation">Caos ⇢ Simulación + Experimento</p>
+        <source src="introv.mp4" type="video/mp4">
+      </video>
+      <p class="equation">Caos Determinista ⇢ Simulación + Experimento</p>
+      <aside class="notes">
+        ➤ Explica qué es el péndulo doble y por qué es un sistema caótico.<br>
+        ➤ Señala la motivación: comparar teoría (lagrangianos y simulación) con experimento real.<br>
+        ➤ Destaca la idea de caos determinista: gobernado por leyes precisas, pero impredecible a largo plazo.
+      </aside>
     </section>
 
-        <section>
-      <h2> Sistema 1 </h2>
+    <!-- Sistema 1 -->
+    <section>
+      <h2>Sistema 1</h2>
       <video controls height="340">
         <source src="video1cor.mp4" type="video/mp4">
       </video>
-      
       <video controls height="340">
         <source src="gif1mp4.mp4" type="video/mp4">
       </video>
+      <aside class="notes">
+        ➤ Sistema 1 corresponde a las condiciones iniciales base: ángulos cercanos a 90° y 80°.<br>
+        ➤ Muestra video experimental y la animación simulada.<br>
+        ➤ Señala la similitud general de movimiento, pese a pequeñas diferencias.
+      </aside>
     </section>
 
-    
+    <!-- Sistema 2 -->
     <section>
-      <h2> Sistema 2 </h2>
+      <h2>Sistema 2</h2>
       <video controls height="340">
         <source src="video2cor.mp4" type="video/mp4">
       </video>
       <video controls height="340">
         <source src="gif2mp4.mp4" type="video/mp4">
       </video>
+      <aside class="notes">
+        ➤ Sistema 2 difiere solo en un pequeño cambio de ángulo inicial respecto al Sistema 1.<br>
+        ➤ Explica que este cambio mínimo genera trayectorias muy distintas a largo plazo.<br>
+        ➤ Esto es la esencia del caos determinista.
+      </aside>
     </section>
-    <!-- Figura 1: Energía -->
+
+    <!-- Energía simulación -->
     <section>
       <h2>Simulación: Energía mecánica</h2>
       <img src="nsim1.png" alt="Energía mecánica simulación">
-      <br>
       <p class="equation">\(E = T + V \;\; \Rightarrow \;\; \text{Disipación}\)</p>
+      <aside class="notes">
+        ➤ En la simulación, la energía total debería ser constante en ausencia de disipación.<br>
+        ➤ Sin embargo, se observa caída inicial y estabilización: efecto numérico y sensibilidad al caos.<br>
+        ➤ Conecta con el carácter caótico del sistema.
+      </aside>
     </section>
 
-    
-    <!-- Figura 1: Energía -->
+    <!-- Energía experimento -->
     <section>
       <h2>Experimento: Energía mecánica</h2>
       <img src="nexp1.png" alt="Energía mecánica experimento">
-      <br>
-      <p class="equation">\(E = T + V \;\; \Rightarrow \;\; \text{Disipación}\)</p>
+      <p class="equation">\(E = T + V \;\; \Rightarrow \;\; \text{Disipación real}\)</p>
+      <aside class="notes">
+        ➤ En el experimento hay pérdidas reales por fricción y aire.<br>
+        ➤ Se observa un pico anómalo cerca de t=2 s, probablemente error de medición.<br>
+        ➤ Contrasta con simulación: ambas muestran tendencia similar.
+      </aside>
     </section>
 
-    <!-- Figura 2: Ángulos -->
+    <!-- Ángulos simulación -->
     <section>
       <h2>Simulación: Ángulos en el tiempo</h2>
-      <img src="nsim2.png" alt="Ángulos simulación y experimento">
+      <img src="nsim2.png" alt="Ángulos simulación">
       <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
+      <aside class="notes">
+        ➤ A diferencia del péndulo simple, las trayectorias no son sinusoidales.<br>
+        ➤ El movimiento alterna fases regulares con divergencias.<br>
+        ➤ Resalta la diferencia entre dinámica lineal y no lineal.
+      </aside>
     </section>
 
+    <!-- Ángulos experimento -->
     <section>
       <h2>Experimento: Ángulos en el tiempo</h2>
-      <img src="nexp2.png" alt="Ángulos simulación y experimento">
+      <img src="nexp2.png" alt="Ángulos experimento">
       <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
+      <aside class="notes">
+        ➤ El experimento confirma tendencias similares a la simulación.<br>
+        ➤ Aparece más ruido y divergencias más rápidas.<br>
+        ➤ Refuerza la idea de sensibilidad a condiciones iniciales.
+      </aside>
     </section>
 
-
+    <!-- Comparación con péndulo simple -->
     <section>
-      <h2> Péndulo Simple</h2>
-      <img src="pendulosimple.png" alt="Ángulos simulación y experimento"><br>
-      <p class="equation">Un Sistema NO caótico</p>
+      <h2>Péndulo simple</h2>
+      <img src="pendulosimple.png" alt="Péndulo simple">
+      <p class="equation">Un sistema NO caótico</p>
+      <aside class="notes">
+        ➤ Muestra contraste con el péndulo simple: trayectoria predecible, periódica y estable.<br>
+        ➤ Enfatiza la diferencia: linealidad vs caos.<br>
+        ➤ Es un buen ejemplo para contextualizar al público.
+      </aside>
     </section>
-    
-    <!-- Espacios de fase -->
+
+    <!-- Espacios de fase sistema 1 -->
     <section>
-      <h2>Sistema 1: Espacios de fase para varilla fija en Simulación y Experimento</h2>
-      <img src="sim1 (1).png" alt="Espacios de fase simulación" width="46%"><br>
-      <img src="download (4).png" alt="Espacios de fase simulación" width ="23%">
-      <img src="download (5).png" alt="Espacios de fase experimento" width="23%"><br>
+      <h2>Sistema 1: Espacios de fase</h2>
+      <img src="sim1 (1).png" width="46%">
+      <br>
+      <img src="download (4).png" width="23%">
+      <img src="download (5).png" width="23%">
       <p class="equation">\((\theta, \dot{\theta}) \;\; \Rightarrow \;\; \text{trayectorias divergentes}\)</p>
+      <aside class="notes">
+        ➤ Las simulaciones generan lazos y espirales que divergen.<br>
+        ➤ El experimento reproduce cualitativamente este patrón, aunque con ruido y lazos incompletos.<br>
+        ➤ Señalar cómo el espacio de fase revela el caos de manera clara.
+      </aside>
     </section>
 
+    <!-- Espacios de fase sistema 2 -->
     <section>
-      <h2>Sistema 2: Espacios de fase para varilla acoplada en Simulación y Experimento</h2>
-      <img src="sim2 (1).png" alt="Espacios de fase simulación" width="46%"><br>
-      <img src="download (6).png" alt="Espacios de fase simulación" width ="23%">
-      <img src="download (7).png" alt="Espacios de fase experimento" width="23%"><br>
+      <h2>Sistema 2: Espacios de fase</h2>
+      <img src="sim2 (1).png" width="46%">
+      <br>
+      <img src="download (6).png" width="23%">
+      <img src="download (7).png" width="23%">
       <p class="equation">\((\theta, \dot{\theta}) \;\; \Rightarrow \;\; \text{trayectorias divergentes}\)</p>
+      <aside class="notes">
+        ➤ Sistema 2 difiere solo en condiciones iniciales mínimas.<br>
+        ➤ El espacio de fase muestra trayectorias totalmente diferentes a largo plazo.<br>
+        ➤ Es la evidencia visual más clara del caos determinista.
+      </aside>
     </section>
 
     <!-- Conclusiones -->
     <section>
       <h2>Conclusiones</h2>
-    
-  <ul>
-    <li><b>El péndulo doble es un sistema caótico:</b> pequeñas variaciones iniciales producen divergencias significativas en el comportamiento a largo plazo.</li>
-    <li><b>Las simulaciones y experimentos concuerdan cualitativamente</b>, mostrando las mismas tendencias pese a las diferencias cuantitativas (ruido, fricción, amortiguamiento).</li>
-    <li><b>El formalismo lagrangiano permite describir el sistema</b> y derivar las ecuaciones de movimiento que explican esta dinámica caótica.</li>
-    <li><b>Los resultados validan la idea de caos determinista:</b> las trayectorias están gobernadas por leyes físicas precisas, pero son extremadamente sensibles a las condiciones iniciales.</li>
-  </ul>
-
+      <ul>
+        <li>El péndulo doble es un sistema caótico.</li>
+        <li>Simulaciones y experimentos concuerdan cualitativamente.</li>
+        <li>El formalismo lagrangiano describe la dinámica caótica.</li>
+        <li>Resultados validan el caos determinista.</li>
+      </ul>
+      <aside class="notes">
+        ➤ Resume: pequeñas diferencias iniciales → trayectorias muy distintas.<br>
+        ➤ Teoría y experimento coinciden en lo esencial, pese a ruido/fricción.<br>
+        ➤ El péndulo doble muestra cómo sistemas simples generan caos.<br>
+        ➤ Cierra con la importancia de combinar teoría y práctica.
+      </aside>
     </section>
 
   </div>
@@ -179,30 +220,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
