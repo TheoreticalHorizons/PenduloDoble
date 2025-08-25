@@ -12,7 +12,6 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
-    /* ==== Tema con colores del póster ==== */
     body {
       background: #ffffff;
       color: #222222;
@@ -30,7 +29,7 @@
       line-height: 1.4;
     }
     .equation {
-      font-size: 1.6em;
+      font-size: 1.4em;
       color: #444;
       margin-top: 20px;
       background: #fff9cc;
@@ -51,7 +50,105 @@
 <div class="reveal">
   <div class="slides">
 
-    <!-- Portada -->
+    <!-- === SECCIONES DEL PDF (10 diapositivas) === -->
+
+    <section>
+      <h1>Análisis Experimental y Teórico del Péndulo Doble</h1>
+      <h3>Caos Determinista y Mecánica Lagrangiana</h3>
+      <p>Jhon Mauricio Mesa Echeverri - Aleph Enciso Cruz</p>
+    </section>
+
+    <section>
+      <h2>Análisis Newtoniano</h2>
+      <p>Descripción sistema cartesiano inercial:</p>
+      <ul>
+        <li>\(\hat{i}\): x (derecha), \(\hat{j}\): y (arriba).</li>
+        <li>Origen: pivote O.</li>
+        <li>Ángulos: \(\theta_1, \theta_2\) medidos desde la vertical hacia abajo.</li>
+      </ul>
+      <p class="equation">\( e_{r_i} = \sin \theta_i \, \hat{i} - \cos \theta_i \, \hat{j}, \quad e_{t_i} = \cos \theta_i \, \hat{i} + \sin \theta_i \, \hat{j} \)</p>
+      <p class="equation">\( \dot e_{r_i} = \dot{\theta}_i e_{t_i}, \quad \dot e_{t_i} = -\dot{\theta}_i e_{r_i} \)</p>
+    </section>
+
+    <section>
+      <h2>Análisis Newtoniano</h2>
+      <p class="equation">\( r_1 = \tfrac{l}{2} e_{r_1}, \quad r_2 = l e_{r_1} + \tfrac{l}{2} e_{r_2} \)</p>
+      <p class="equation">\( x_1 = \tfrac{l}{2}\sin\theta_1, \quad y_1 = -\tfrac{l}{2}\cos\theta_1 \)</p>
+      <p class="equation">\( x_2 = l\sin\theta_1 + \tfrac{l}{2}\sin\theta_2, \quad y_2 = -l\cos\theta_1 - \tfrac{l}{2}\cos\theta_2 \)</p>
+      <p class="equation">\( v_1 = \tfrac{l}{2}\dot{\theta}_1 e_{t_1}, \quad v_2 = l\dot{\theta}_1 e_{t_1} + \tfrac{l}{2}\dot{\theta}_2 e_{t_2} \)</p>
+    </section>
+
+    <section>
+      <h2>Análisis Newtoniano</h2>
+      <ul>
+        <li>Varilla 1: tensiones R y H, peso \(W_1 = (0,-M_1 g)\).</li>
+        <li>Varilla 2: tensión -H, peso \(W_2 = (0,-M_2 g)\).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Análisis Newtoniano</h2>
+      <p class="equation">M_1 (a_1)_x = R_x + H_x</p>
+      <p class="equation">M_1 (a_1)_y = R_y + H_y - M_1 g</p>
+      <p class="equation">M_2 (a_2)_x = - H_x</p>
+      <p class="equation">M_2 (a_2)_y = - H_y - M_2 g</p>
+      <p class="equation">I_1 \ddot{\theta}_1 = (r_O - r_1) \times R + (r_A - r_1) \times H</p>
+      <p class="equation">I_2 \ddot{\theta}_2 = (r_A - r_2) \times (-H)</p>
+    </section>
+
+    <section>
+      <h2>Análisis Newtoniano</h2>
+      <p class="equation">H_x = -M_2 (a_2)_x, \quad H_y = -M_2 (a_2)_y - M_2 g</p>
+      <p class="equation">R_x = M_1 (a_1)_x + M_2 (a_2)_x</p>
+      <p class="equation">R_y = M_1 (a_1)_y + M_2 (a_2)_y + (M_1 + M_2) g</p>
+    </section>
+
+    <section>
+      <h2>Análisis Newtoniano</h2>
+      <p class="equation">
+        \left(\tfrac{M_1 l^2}{3} + M_2 l^2 \right) \ddot{\theta}_1 +
+        \left( \tfrac{M_2 l^2}{2} \cos \Delta \right) \ddot{\theta}_2 =
+        - M_2 \tfrac{l^2}{2} \sin \Delta \, \dot{\theta}_2^2 -
+        \left( \tfrac{M_1 g l}{2} + M_2 g l \right) \sin \theta_1
+      </p>
+      <p class="equation">
+        \left( \tfrac{M_2 l^2}{2} \cos \Delta \right) \ddot{\theta}_1 +
+        \tfrac{M_2 l^2}{3} \ddot{\theta}_2 =
+        M_2 \tfrac{l^2}{2} \sin \Delta \, \dot{\theta}_1^2 -
+        M_2 \tfrac{g l}{2} \sin \theta_2
+      </p>
+      <p>con \(\Delta = \theta_1 - \theta_2\).</p>
+    </section>
+
+    <section>
+      <h2>Análisis Lagrangiano</h2>
+      <p>Coordenadas: \(\theta_1(t), \theta_2(t)\).</p>
+      <p class="equation">v_1 = \tfrac{l}{2} \dot{\theta}_1 e_{t_1}, \quad v_2 = l\dot{\theta}_1 e_{t_1} + \tfrac{l}{2}\dot{\theta}_2 e_{t_2}</p>
+    </section>
+
+    <section>
+      <h2>Análisis Lagrangiano</h2>
+      <p class="equation">
+        T = \tfrac{1}{2} M_1 \|v_1\|^2 + \tfrac{1}{2} I_1 \dot{\theta}_1^2 +
+        \tfrac{1}{2} M_2 \|v_2\|^2 + \tfrac{1}{2} I_2 \dot{\theta}_2^2
+      </p>
+      <p class="equation">
+        V = -\left( \tfrac{M_1 g l}{2} + M_2 g l \right)\cos\theta_1 - M_2 \tfrac{g l}{2} \cos\theta_2
+      </p>
+    </section>
+
+    <section>
+      <h2>Análisis Lagrangiano</h2>
+      <p class="equation">L = T - V</p>
+      <p class="equation">
+        \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\theta}_i}\right) - \frac{\partial L}{\partial \theta_i} = 0, \quad i=1,2
+      </p>
+      <p>Se obtienen las mismas ecuaciones finales que por Newton.</p>
+    </section>
+
+    <!-- === TUS SECCIONES ORIGINALES (VIDEOS, IMÁGENES, ETC.) === -->
+
+    <!-- Portada original -->
     <section>
       <h1>Análisis Experimental y Teórico del Péndulo Doble</h1>
       <h3>Caos determinista y Mecánica Lagrangiana</h3>
@@ -59,12 +156,6 @@
         <source src="introv.mp4" type="video/mp4">
       </video>
       <p class="equation">Caos Determinista ⇢ Simulación + Experimento</p>
-      <aside class="notes">
-      ➤ Explica qué es el péndulo doble<br>
-      ➤ Sistema determinista<br>
-      ➤ Caos<br>
-      ➤ Caos determinista
-      </aside>
     </section>
 
     <!-- Sistema 1 -->
@@ -76,11 +167,6 @@
       <video controls height="340">
         <source src="gif1mp4.mp4" type="video/mp4">
       </video>
-      <aside class="notes">
-        ➤ Sistema 1 corresponde a las condiciones iniciales base: ángulos cercanos a 180° y 0°.<br>
-        ➤ Muestra video experimental y la animación simulada.<br>
-        ➤ Señala la similitud general de movimiento, pese a pequeñas diferencias.
-      </aside>
     </section>
 
     <!-- Sistema 2 -->
@@ -92,129 +178,77 @@
       <video controls height="340">
         <source src="gif2mp4.mp4" type="video/mp4">
       </video>
-      <aside class="notes">
-        ➤ Sistema 2 difiere solo en un pequeño cambio de ángulo inicial respecto al Sistema 1.<br>
-        ➤ Explica que este cambio mínimo genera trayectorias muy distintas a largo plazo.<br>
-        ➤ Esto es la esencia del caos determinista.
-      </aside>
     </section>
 
-    <!-- Energía simulación -->
+    <!-- Simulación energía -->
     <section>
       <h2>Simulación: Energía mecánica</h2>
       <img src="nsim1.png" alt="Energía mecánica simulación">
-      <p class="equation">\(E = T + V \;\; \Rightarrow \;\; \text{Disipación}\)</p>
-      <aside class="notes">
-        ➤ En la simulación, la energía total debería ser constante en ausencia de disipación.<br>
-        ➤ Sin embargo, se observa caída inicial y estabilización: efecto numérico y sensibilidad al caos.<br>
-        ➤ Conecta con el carácter caótico del sistema.
-      </aside>
+      <p class="equation">E = T + V ⇒ Disipación</p>
     </section>
 
-    <!-- Energía experimento -->
+    <!-- Experimento energía -->
     <section>
       <h2>Experimento: Energía mecánica</h2>
       <img src="nexp1.png" alt="Energía mecánica experimento">
-      <p class="equation">\(E = T + V \;\; \Rightarrow \;\; \text{Disipación real}\)</p>
-      <aside class="notes">
-        ➤ En el experimento hay pérdidas reales por fricción y aire.<br>
-        ➤ Se observa un pico anómalo cerca de t=2 s, probablemente error de medición.<br>
-        ➤ Contrasta con simulación: ambas muestran tendencia similar.
-      </aside>
+      <p class="equation">E = T + V ⇒ Disipación real</p>
     </section>
 
+    <!-- Péndulo simple -->
     <section>
       <h2>Péndulo simple: Ángulos en el tiempo</h2>
-      <img src="ps.png" alt="Ángulos simulación" height="240">
-      <img src="psa.png" alt="Ángulos simulación" height="240"><br>
-      <p class="equation">Sistema NO caótico. \(\theta_1(t), \theta_2(t) \;\; \sim \sin(\omega t)\)</p>
-      <aside class="notes">
-        ➤ Péndulo simple sin amortiguamiento<br>
-        ➤ Péndulo simple con amortiguamiento<br>
-      </aside>
+      <img src="ps.png" height="240">
+      <img src="psa.png" height="240"><br>
+      <p class="equation">Sistema NO caótico. \(\theta_1(t),\theta_2(t) ∼ \sin(\omega t)\)</p>
     </section>
 
     <!-- Ángulos simulación -->
     <section>
       <h2>Simulación: Ángulos en el tiempo</h2>
-      <img src="nsim2.png" alt="Ángulos simulación">
-      <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
-      <aside class="notes">
-        ➤ A diferencia del péndulo simple, las trayectorias no son sinusoidales (al principio inicialmente)<br>
-        ➤ El movimiento alterna fases regulares con divergencias.<br>
-      </aside>
+      <img src="nsim2.png">
+      <p class="equation">\(\theta_1(t), \theta_2(t) \not∼ \sin(\omega t)\)</p>
     </section>
 
     <!-- Ángulos experimento -->
     <section>
       <h2>Experimento: Ángulos en el tiempo</h2>
-      <img src="nexp2.png" alt="Ángulos experimento">
-      <p class="equation">\(\theta_1(t), \theta_2(t) \;\; \not\sim \sin(\omega t)\)</p>
-      <aside class="notes">
-        ➤ El experimento confirma tendencias similares a la simulación.<br>
-        ➤ Aparece más ruido y divergencias más rápidas.<br>
-        ➤ Refuerza la idea de sensibilidad a condiciones iniciales.
-      </aside>
+      <img src="nexp2.png">
+      <p class="equation">\(\theta_1(t), \theta_2(t) \not∼ \sin(\omega t)\)</p>
     </section>
 
     <!-- Comparación con péndulo simple -->
     <section>
       <h2>Péndulo simple</h2>
-      <img src="pendulosimple.png" alt="Péndulo simple"><br>
+      <img src="pendulosimple.png"><br>
       <p class="equation">Un sistema NO caótico</p>
-      <aside class="notes">
-        ➤ Muestra contraste con el péndulo simple: trayectoria predecible, periódica y estable. A Ángulos pequeños<br>
-      </aside>
     </section>
 
-    <!-- Espacios de fase sistema 1 -->
+    <!-- Espacios de fase -->
     <section>
       <h2>Sistema 1: Espacios de fase</h2>
-      <img src="sim1 (1).png" width="46%">
-      <br>
+      <img src="sim1 (1).png" width="46%"><br>
       <img src="download (4).png" width="23%">
-      <img src="download (5).png" width="23%"><br>
-      <p class="equation">\((\theta, \dot{\theta}) \;\; \Rightarrow \;\; \text{trayectorias divergentes}\)</p>
-      <aside class="notes">
-        ➤ Las simulaciones generan lazos y espirales que divergen.<br>        
-        ➤ Señalar cómo el espacio de fase revela el caos de manera clara.
-      </aside>
+      <img src="download (5).png" width="23%">
+      <p class="equation">\((\theta, \dot{\theta}) ⇒ trayectorias divergentes\)</p>
     </section>
 
-    <!-- Espacios de fase sistema 2 -->
     <section>
       <h2>Sistema 2: Espacios de fase</h2>
-      <img src="sim2 (1).png" width="46%">
-      <br>
+      <img src="sim2 (1).png" width="46%"><br>
       <img src="download (6).png" width="23%">
-      <img src="download (7).png" width="23%"><br>
-      <p class="equation">\((\theta, \dot{\theta}) \;\; \Rightarrow \;\; \text{trayectorias divergentes}\)</p>
-      <aside class="notes">
-        ➤ Sistema 2 difiere solo en condiciones iniciales mínimas.<br>
-        ➤ El espacio de fase muestra trayectorias totalmente diferentes a largo plazo.<br>
-        ➤ Es la evidencia visual más clara del caos determinista.
-      </aside>
+      <img src="download (7).png" width="23%">
+      <p class="equation">\((\theta, \dot{\theta}) ⇒ trayectorias divergentes\)</p>
     </section>
 
     <!-- Conclusiones -->
     <section>
       <h2>Conclusiones</h2>
-      <ul style="text-align: left; list-style-type: none;">
-        <li>➤ El péndulo doble es un sistema caótico: pequeñas variaciones iniciales producen divergencias significativas en el comportamiento a largo plazo.</li><br>
-        <li>➤ Las simulaciones y experimentos concuerdan cualitativamente, mostrando las mismas tendencias pese a las diferencias cuantitativas (ruido, fricción, amortiguamiento).</li><br>
-        <li>➤ Los resultados validan la idea de caos determinista: las trayectorias están gobernadas por leyes físicas precisas, pero son extremadamente sensibles a las condiciones iniciales.</li>
-        <li>➤ El formalismo lagrangiano permite describir el sistema y derivar las ecuaciones de movimiento que explican esta dinámica caótica.</li><br>
-        
-      </ul>
-
-      <aside class="notes">
       <ul>
-        <li>Resume: pequeñas diferencias iniciales → trayectorias muy distintas.</li>
-        <li>Teoría y experimento coinciden en lo esencial, pese a ruido/fricción.</li>
-        <li>El péndulo doble muestra cómo sistemas simples generan caos.</li>
-        <li>Cierra con la importancia de combinar teoría y práctica.</li>
+        <li>El péndulo doble es un sistema caótico.</li>
+        <li>Simulación y experimento concuerdan cualitativamente.</li>
+        <li>Pequeñas diferencias iniciales → trayectorias muy distintas.</li>
+        <li>El formalismo lagrangiano describe y explica la dinámica caótica.</li>
       </ul>
-      </aside>
     </section>
 
   </div>
@@ -231,26 +265,6 @@
     plugins: [ RevealNotes ]
   });
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
