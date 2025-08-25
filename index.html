@@ -8,34 +8,26 @@
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
 
-  <!-- MathJax (config + script) -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [["\\(", "\\)"], ["$", "$"]],
-        displayMath: [["\\[", "\\]"]],
-        packages: {'[+]': ['ams']},
-        processEscapes: true
-      },
-      options: {
-        skipHtmlTags: ['script','noscript','style','textarea','pre']
-      }
-    };
-  </script>
+  <!-- MathJax -->
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
-    ul, li{ list-style-type: none; }
     body {
       background: #ffffff;
       color: #222222;
       font-family: "Helvetica", "Arial", sans-serif;
     }
-    .reveal h1, .reveal h2, .reveal h3 { color: #006633; }
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: #006633;
+    }
     .reveal h1 { font-size: 2.6em; }
     .reveal h2 { font-size: 2.2em; }
     .reveal h3 { font-size: 1.8em; }
-    .reveal section p, .reveal section li { font-size: 1.4em; line-height: 1.4; }
+    .reveal section p, 
+    .reveal section li {
+      font-size: 1.4em;
+      line-height: 1.4;
+    }
     .equation {
       font-size: 1.4em;
       color: #444;
@@ -96,19 +88,19 @@
 
     <section>
       <h2>Análisis Newtoniano</h2>
-      <p class="equation">M_1 (a_1)_x = R_x + H_x</p>
-      <p class="equation">M_1 (a_1)_y = R_y + H_y - M_1 g</p>
-      <p class="equation">M_2 (a_2)_x = - H_x</p>
-      <p class="equation">M_2 (a_2)_y = - H_y - M_2 g</p>
-      <p class="equation">I_1 \ddot{\theta}_1 = (r_O - r_1) \times R + (r_A - r_1) \times H</p>
-      <p class="equation">I_2 \ddot{\theta}_2 = (r_A - r_2) \times (-H)</p>
+      <p class="equation">\(M_1 (a_1)_x = R_x + H_x \)</p>
+      <p class="equation">\(M_1 (a_1)_y = R_y + H_y - M_1 g\)</p>
+      <p class="equation">\(M_2 (a_2)_x = - H_x\)</p>
+      <p class="equation">\(M_2 (a_2)_y = - H_y - M_2 g\)</p>
+      <p class="equation">\(I_1 \ddot{\theta}_1 = (r_O - r_1) \times R + (r_A - r_1) \times H\)</p>
+      <p class="equation">\(I_2 \ddot{\theta}_2 = (r_A - r_2) \times (-H)\)</p>
     </section>
 
     <section>
       <h2>Análisis Newtoniano</h2>
-      <p class="equation">H_x = -M_2 (a_2)_x, \quad H_y = -M_2 (a_2)_y - M_2 g</p>
-      <p class="equation">R_x = M_1 (a_1)_x + M_2 (a_2)_x</p>
-      <p class="equation">R_y = M_1 (a_1)_y + M_2 (a_2)_y + (M_1 + M_2) g</p>
+      <p class="equation">\(H_x = -M_2 (a_2)_x, \quad H_y = -M_2 (a_2)_y - M_2 g\)</p>
+      <p class="equation">\(R_x = M_1 (a_1)_x + M_2 (a_2)_x\)</p>
+      <p class="equation">\(R_y = M_1 (a_1)_y + M_2 (a_2)_y + (M_1 + M_2) g\)</p>
     </section>
 
     <section>
@@ -131,25 +123,25 @@
     <section>
       <h2>Análisis Lagrangiano</h2>
       <p>Coordenadas: \(\theta_1(t), \theta_2(t)\).</p>
-      <p class="equation">v_1 = \tfrac{l}{2} \dot{\theta}_1 e_{t_1}, \quad v_2 = l\dot{\theta}_1 e_{t_1} + \tfrac{l}{2}\dot{\theta}_2 e_{t_2}</p>
+      <p class="equation">\(v_1 = \tfrac{l}{2} \dot{\theta}_1 e_{t_1}, \quad v_2 = l\dot{\theta}_1 e_{t_1} + \tfrac{l}{2}\dot{\theta}_2 e_{t_2}\)</p>
     </section>
 
     <section>
       <h2>Análisis Lagrangiano</h2>
-      <p class="equation">
+      <p class="equation">\(
         T = \tfrac{1}{2} M_1 \|v_1\|^2 + \tfrac{1}{2} I_1 \dot{\theta}_1^2 +
-        \tfrac{1}{2} M_2 \|v_2\|^2 + \tfrac{1}{2} I_2 \dot{\theta}_2^2
+        \tfrac{1}{2} M_2 \|v_2\|^2 + \tfrac{1}{2} I_2 \dot{\theta}_2^2\)
       </p>
       <p class="equation">
-        V = -\left( \tfrac{M_1 g l}{2} + M_2 g l \right)\cos\theta_1 - M_2 \tfrac{g l}{2} \cos\theta_2
+        \(V = -\left( \tfrac{M_1 g l}{2} + M_2 g l \right)\cos\theta_1 - M_2 \tfrac{g l}{2} \cos\theta_2\)
       </p>
     </section>
 
     <section>
       <h2>Análisis Lagrangiano</h2>
-      <p class="equation">L = T - V</p>
-      <p class="equation">
-        \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\theta}_i}\right) - \frac{\partial L}{\partial \theta_i} = 0, \quad i=1,2
+      <p class="equation">\(L = T - V\)</p>
+      <p class="equation">\(
+        \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\theta}_i}\right) - \frac{\partial L}{\partial \theta_i} = 0, \quad i=1,2 \)
       </p>
       <p>Se obtienen las mismas ecuaciones finales que por Newton.</p>
     </section>
@@ -164,12 +156,6 @@
         <source src="introv.mp4" type="video/mp4">
       </video>
       <p class="equation">Caos Determinista ⇢ Simulación + Experimento</p>
-      <aside class="notes">
-        ➤ Explica qué es el péndulo doble<br>
-        ➤ Sistema determinista<br>
-        ➤ Caos<br>
-        ➤ Caos determinista
-      </aside>
     </section>
 
     <!-- Sistema 1 -->
@@ -181,11 +167,6 @@
       <video controls height="340">
         <source src="gif1mp4.mp4" type="video/mp4">
       </video>
-      <aside class="notes">
-        ➤ Sistema 1 corresponde a las condiciones iniciales base: ángulos cercanos a 180° y 0°.<br>
-        ➤ Muestra video experimental y la animación simulada.<br>
-        ➤ Señala la similitud general de movimiento, pese a pequeñas diferencias.
-      </aside>
     </section>
 
     <!-- Sistema 2 -->
@@ -197,11 +178,6 @@
       <video controls height="340">
         <source src="gif2mp4.mp4" type="video/mp4">
       </video>
-      <aside class="notes">
-        ➤ Sistema 2 difiere solo en un pequeño cambio de ángulo inicial respecto al Sistema 1.<br>
-        ➤ Explica que este cambio mínimo genera trayectorias muy distintas a largo plazo.<br>
-        ➤ Esto es la esencia del caos determinista.
-      </aside>
     </section>
 
     <!-- Simulación energía -->
@@ -209,11 +185,6 @@
       <h2>Simulación: Energía mecánica</h2>
       <img src="nsim1.png" alt="Energía mecánica simulación">
       <p class="equation">E = T + V ⇒ Disipación</p>
-      <aside class="notes">
-        ➤ En la simulación, la energía total debería ser constante en ausencia de disipación.<br>
-        ➤ Sin embargo, se observa caída inicial y estabilización: efecto numérico y sensibilidad al caos.<br>
-        ➤ Conecta con el carácter caótico del sistema.
-      </aside>
     </section>
 
     <!-- Experimento energía -->
@@ -221,11 +192,6 @@
       <h2>Experimento: Energía mecánica</h2>
       <img src="nexp1.png" alt="Energía mecánica experimento">
       <p class="equation">E = T + V ⇒ Disipación real</p>
-      <aside class="notes">
-        ➤ En el experimento hay pérdidas reales por fricción y aire.<br>
-        ➤ Se observa un pico anómalo cerca de t=2 s, probablemente error de medición.<br>
-        ➤ Contrasta con simulación: ambas muestran tendencia similar.
-      </aside>
     </section>
 
     <!-- Péndulo simple -->
@@ -234,10 +200,6 @@
       <img src="ps.png" height="240">
       <img src="psa.png" height="240"><br>
       <p class="equation">Sistema NO caótico. \(\theta_1(t),\theta_2(t) ∼ \sin(\omega t)\)</p>
-      <aside class="notes">
-        ➤ Péndulo simple sin amortiguamiento<br>
-        ➤ Péndulo simple con amortiguamiento<br>
-      </aside>
     </section>
 
     <!-- Ángulos simulación -->
@@ -245,10 +207,6 @@
       <h2>Simulación: Ángulos en el tiempo</h2>
       <img src="nsim2.png">
       <p class="equation">\(\theta_1(t), \theta_2(t) \not∼ \sin(\omega t)\)</p>
-      <aside class="notes">
-        ➤ A diferencia del péndulo simple, las trayectorias no son sinusoidales (al principio inicialmente)<br>
-        ➤ El movimiento alterna fases regulares con divergencias.<br>
-      </aside>
     </section>
 
     <!-- Ángulos experimento -->
@@ -256,11 +214,6 @@
       <h2>Experimento: Ángulos en el tiempo</h2>
       <img src="nexp2.png">
       <p class="equation">\(\theta_1(t), \theta_2(t) \not∼ \sin(\omega t)\)</p>
-      <aside class="notes">
-        ➤ El experimento confirma tendencias similares a la simulación.<br>
-        ➤ Aparece más ruido y divergencias más rápidas.<br>
-        ➤ Refuerza la idea de sensibilidad a condiciones iniciales.
-      </aside>
     </section>
 
     <!-- Comparación con péndulo simple -->
@@ -268,36 +221,23 @@
       <h2>Péndulo simple</h2>
       <img src="pendulosimple.png"><br>
       <p class="equation">Un sistema NO caótico</p>
-      <aside class="notes">
-        ➤ Muestra contraste con el péndulo simple: trayectoria predecible, periódica y estable. A Ángulos pequeños<br>
-      </aside>
     </section>
 
-    <!-- Espacios de fase sistema 1 -->
+    <!-- Espacios de fase -->
     <section>
       <h2>Sistema 1: Espacios de fase</h2>
       <img src="sim1 (1).png" width="46%"><br>
       <img src="download (4).png" width="23%">
       <img src="download (5).png" width="23%">
       <p class="equation">\((\theta, \dot{\theta}) ⇒ trayectorias divergentes\)</p>
-      <aside class="notes">
-        ➤ Las simulaciones generan lazos y espirales que divergen.<br>
-        ➤ Señalar cómo el espacio de fase revela el caos de manera clara.
-      </aside>
     </section>
 
-    <!-- Espacios de fase sistema 2 -->
     <section>
       <h2>Sistema 2: Espacios de fase</h2>
       <img src="sim2 (1).png" width="46%"><br>
       <img src="download (6).png" width="23%">
       <img src="download (7).png" width="23%">
       <p class="equation">\((\theta, \dot{\theta}) ⇒ trayectorias divergentes\)</p>
-      <aside class="notes">
-        ➤ Sistema 2 difiere solo en condiciones iniciales mínimas.<br>
-        ➤ El espacio de fase muestra trayectorias totalmente diferentes a largo plazo.<br>
-        ➤ Es la evidencia visual más clara del caos determinista.
-      </aside>
     </section>
 
     <!-- Conclusiones -->
@@ -309,14 +249,6 @@
         <li>Pequeñas diferencias iniciales → trayectorias muy distintas.</li>
         <li>El formalismo lagrangiano describe y explica la dinámica caótica.</li>
       </ul>
-      <aside class="notes">
-        <ul>
-          <li>Resume: pequeñas diferencias iniciales → trayectorias muy distintas.</li>
-          <li>Teoría y experimento coinciden en lo esencial, pese a ruido/fricción.</li>
-          <li>El péndulo doble muestra cómo sistemas simples generan caos.</li>
-          <li>Cierra con la importancia de combinar teoría y práctica.</li>
-        </ul>
-      </aside>
     </section>
 
   </div>
@@ -331,30 +263,6 @@
     slideNumber: true,
     transition: 'fade',
     plugins: [ RevealNotes ]
-  });
-
-  // --- Sin tocar tu HTML: normaliza símbolos y envuelve fórmulas al vuelo ---
-  function fixEquations(){
-    document.querySelectorAll('.equation').forEach(p => {
-      let t = p.innerHTML.trim();
-      const already = t.startsWith('\\(') || t.startsWith('\\[');
-      // normaliza Unicode → TeX
-      t = t
-        .replaceAll('∼', '\\sim')
-        .replaceAll('⇒', '\\Rightarrow')
-        .replaceAll('×', '\\times')
-        .replace(/\\not∼/g, '\\not\\sim');
-      if (!already) t = `\\(${t}\\)`; // envuelve si faltan delimitadores
-      p.innerHTML = t;
-    });
-  }
-
-  Reveal.on('ready', () => {
-    fixEquations();
-    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
-  });
-  Reveal.on('slidechanged', () => {
-    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
   });
 </script>
 
